@@ -1,0 +1,159 @@
+<scroll-view bindscroll="scroll" class="container" scrollY="true">
+  <!-- <swiper autoplay="{{autoplay}}" class="swiper" duration="{{duration}}" indicatorActiveColor="#fff" indicatorColor="rgba(255,255,255,.5)" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <swiper-item wx:for="{{banner}}" wx:key="ad_id">
+            <view catchtap="skipAd" data-adid="{{item.ad_id}}" data-link="{{item.ad_link}}" data-manner="{{item.target}}">
+                <image class="swiper-image" lazyLoad="true" src="{{item.ad_code}}"></image>
+            </view>
+        </swiper-item>
+    </swiper> -->
+  <view class="book">
+    <view class="book-item">
+      <image class="pic" mode="aspectFill" src="{{stickyNote.bg_img}}"></image>
+      <view class="item">
+        <label class="label"></label>
+        <navigator class="item-main" url="/pages/heartbar-detail/heartbar-detail?friend_id={{stickyNote.friend_id}}">
+          <view class="item-tit"></view>
+          <view class="item-text">{{stickyNote.content}}</view>
+          <view class="item-box">
+            <text>{{stickyNote.virtual_name}}</text>
+          </view>
+        </navigator>
+        <view class="item-bottom">
+          <view catchtap="clickLike" class="li">
+            <view class="praise {{stickyNote.like_status==1?'active':''}}">
+              {{stickyNote.like_num}}
+            </view>
+          </view>
+          <view catchtap="clickDislike" class="li">
+            <view class="break {{stickyNote.dislike_status==1?'active':''}}">
+              {{stickyNote.dislike_num}}
+            </view>
+          </view>
+          <view catchtap="loadStickyNote" class="li">
+            <view class="update">换一换</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="menu">
+    <navigator class="item navigator-hover" url="/pages/assess/assess">
+      <image class="item-ic" lazyLoad="true" src="/images/menu-ic-1.png"></image>
+      <view class="item-name">心灵测评</view>
+    </navigator>
+    <navigator class="item" url="/pages/knowis/knowis">
+      <image class="item-ic" lazyLoad="true" src="/images/menu-ic-2.png"></image>
+      <view class="item-name">小海知道</view>
+    </navigator>
+    <navigator class="item" url="/pages/listen/listen">
+      <image class="item-ic" lazyLoad="true" src="/images/menu-ic-3.png"></image>
+      <view class="item-name">小海心声</view>
+    </navigator>
+    <navigator class="item" url="/pages/heartbar/heartbar">
+      <image class="item-ic" lazyLoad="true" src="/images/menu-ic-4.png"></image>
+      <view class="item-name">海底树洞</view>
+    </navigator>
+  </view>
+
+  <view style="min-height:332rpx;">
+    <view class="play {{suspend?'topPlay':''}}">
+      <view class="play-main">
+        <image class="photo" lazyLoad="true" src="{{listenList.head_img}}"></image>
+        <view class="play-box">
+          <label class="key" hidden="{{listenList.boutique==1?false:true}}">精品</label>
+          <view class="tit">{{listenList.song_name}}</view>
+          <view class="text">{{listenList.author}}
+            <label wx:for="{{listenList.tag}}" wx:key="name">
+              {{item.name}}
+            </label>
+          </view>
+        </view>
+      </view>
+      <view class="slider">
+        <view class="left">{{bgAudioState.starttime}}</view>
+        <view class="right">{{bgAudioState.endtime}}</view>
+        <slider activeColor="#2ec17d" bindchange="sliderChange" blockColor="#2ec17d" blockSize="12" class="slider-box" max="{{bgAudioState.max}}" step="1" value="{{bgAudioState.offset}}"></slider>
+      </view>
+      <view class="play-bottom">
+        <view catchtap="inaSong" class="play-prev">
+          <image lazyLoad="true" src="/images/play-btn-prev.png"></image>
+        </view>
+        <view catchtap="play" class="play-btn {{bgAudioState.playState==1?'stop':''}}"></view>
+        <view catchtap="underaSong" class="play-next">
+          <image lazyLoad="true" src="/images/play-btn-next.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="home-tit">
+    <view class="name">小海课堂</view>
+    <navigator class="more" url="/pages/knowis/knowis"></navigator>
+  </view>
+  <view class="course">
+    <navigator class="item" url="/pages/knowis-detail/knowis-detail?course_id={{item.course_id}}" wx:for="{{courseList}}" wx:key="course_id">
+      <image class="pic" lazyLoad="true" src="{{item.cover_img}}"></image>
+      <view class="item-main">
+        <view class="tit">{{item.course_name}}</view>
+        <view class="text">{{item.lecturer}} {{item.honor}}</view>
+        <view class="box">
+          <view class="num">
+            <label>{{item.section_num}}节</label>
+            <block wx:for="{{item.tag}}" wx:key="*this">{{item}}</block>
+          </view>
+          <view class="price" wx:if="{{phoneSystem!='iOS'}}">￥{{item.current_prices}}
+          </view>
+          <view class="count">{{item.heat}}人上课</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="home-tit article-class">
+    <view class="name">文章</view>
+    <navigator class="more" url="/pages/listen/listen?bigType=2"></navigator>
+  </view>
+  <scroll-view class="article-swiper" scrollX="true">
+    <navigator class="item" url="/pages/article-detail/article-detail?article_id={{item.article_id}}" wx:for="{{articleList}}" wx:key="article_id">
+      <image lazyLoad="true" mode="aspectFill" src="{{item.thumb}}"></image>
+      <view class="item-main">
+        <view class="tit">{{item.title}}</view>
+        <view class="text">{{item.description}}</view>
+        <view class="item-box">
+          <view class="see">{{item.click}}</view>
+          <view class="name">{{item.author}}</view>
+        </view>
+      </view>
+    </navigator>
+  </scroll-view>
+  <view class="home-tit evaluation-class">
+    <view class="name">心里测试</view>
+    <navigator class="more" url="/pages/assess/assess"></navigator>
+  </view>
+  <view class="assess">
+    <navigator class="item" url="/pages/topic_home/topic_home?id={{item.id}}" wx:for="{{appraisalList}}" wx:key="id">
+      <image lazyLoad="true" mode="aspectFill" src="{{item.thumbnail}}"></image>
+      <view class="item-main">
+        <view class="tit">{{item.title}}</view>
+        <view class="text">{{item.subTitle}}</view>
+        <view class="box">
+          <view class="count">{{item.evaluation}}已测</view>
+          <view class="price" wx:if="{{phoneSystem!='iOS'}}">￥{{item.price}}
+            <label>￥{{item.marketPrice}}</label>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="home-tit music-class">
+    <view class="name">小海心声</view>
+    <navigator class="more" url="/pages/listen/listen"></navigator>
+  </view>
+  <scroll-view class="listen" scrollX="true">
+    <navigator class="item" url="/pages/listen-detail/listen-detail?listen_id={{item.id}}&type={{item.classify}}" wx:for="{{bottomListenList}}" wx:key="id">
+      <image lazyLoad="true" mode="aspectFill" src="{{item.head_img}}"></image>
+      <view class="item-tit">{{item.song_name}}</view>
+      <view class="item-name">{{item.author}}</view>
+    </navigator>
+  </scroll-view>
+  <view class="h116"></view>
+</scroll-view>
