@@ -5,9 +5,9 @@
 ## 小海心灵是一个帮助大学生，解决心理情感问题的微信小程序
 
 # 部分页面展示
- [![EFcSNd.md.jpg](https://s2.ax1x.com/2019/04/21/EFcSNd.md.jpg)](https://imgchr.com/i/EFcSNd)
- [![EF6zAH.md.jpg](https://s2.ax1x.com/2019/04/21/EF6zAH.md.jpg)](https://imgchr.com/i/EF6zAH)
- [![EF6vHe.md.jpg](https://s2.ax1x.com/2019/04/21/EF6vHe.md.jpg)](https://imgchr.com/i/EF6vHe)
+ [![EF6vHe.th.jpg](https://s2.ax1x.com/2019/04/21/EF6vHe.th.jpg)](https://imgchr.com/i/EF6vHe)
+ [![EFcSNd.th.jpg](https://s2.ax1x.com/2019/04/21/EFcSNd.th.jpg)](https://imgchr.com/i/EFcSNd)
+ [![EF6zAH.th.jpg](https://s2.ax1x.com/2019/04/21/EF6zAH.th.jpg)](https://imgchr.com/i/EF6zAH)
 # 主要功能
 ### 它提供了，线上预约功能，帮助广大学生更好的与心理咨询中心，进行预计
 ### 还提供了海底树洞， 为大家提供一个倾述情感的好地方，在这里你可以选择是否匿名，还能帮助解决他人遇到的问题。
