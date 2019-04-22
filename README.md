@@ -2,6 +2,8 @@
 
  ## [最新版本更新日志 2019.4.20 更新日志请看最下方](#jump)
  
+ ### [api接口规范文档](https://github.com/Cherrison/oucHeart/blob/master/%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83.md)
+ 
 ## 小海心灵是一个帮助大学生，解决心理情感问题的微信小程序
 
 # 部分页面展示
