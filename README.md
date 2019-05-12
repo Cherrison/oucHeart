@@ -23,13 +23,7 @@
  1. 需要进行心理咨询的咨询者， 包括本校学生，教职工，还提供了外校接口
  2. 提供心灵咨询服务的老师
  3. 乐于助人， 为大家解决问题的心灵志愿者
- 
- <font face="黑体">我是黑体字</font>
-<font face="微软雅黑">我是微软雅黑</font>
-<font face="STCAIYUN">我是华文彩云</font>
-<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
-<font color=#00ffff size=72>color=#00ffff</font>
-<font color=gray size=72>color=gray</font>
+
  
  
  
