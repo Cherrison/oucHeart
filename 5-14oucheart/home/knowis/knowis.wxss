@@ -1,0 +1,13 @@
+/* pages/home/knowis/knowis.wxss */
+.btn{
+  height: 3vh;
+  width: 12vw;
+  background-color: #db8bbb;
+  opacity: 0.80;
+  border-radius: 20rpx;
+  margin-top: 45rpx;
+  position: fixed;
+  font-size: 35rpx;
+  font-weight: bolder;
+  color: rgb(29, 43, 59);
+}

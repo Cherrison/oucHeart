@@ -1,0 +1,6 @@
+  <view class="cu-custom" style="height:150rpx;">
+    <view class="cu-bar fixed bg-gradual-pink" style="height:150rpx;padding-top:10px;">
+      <view bindtap='back' class='btn'>返回</view>
+      <text style='font-weight:bolder;margin-left:300rpx;margin-top:50rpx;'>小海心声</text>
+    </view>
+  </view>

@@ -1,0 +1,58 @@
+/* .text-xs {
+  font-size: 20rpx;
+}
+.text-sm {
+  font-size: 24rpx;
+}
+.text-df {
+  font-size: 28rpx;
+}
+.text-lg {
+  font-size: 32rpx;
+}
+.text-xl {
+  font-size: 36rpx;
+}
+.text-xxl {
+  font-size: 44rpx;
+}
+.text-sl {
+  font-size: 80rpx;
+}
+.text-xsl {
+  font-size: 120rpx;
+} */
+.btn{
+  height: 3vh;
+  width: 12vw;
+  background-color: #db8bbb;
+  opacity: 0.80;
+  border-radius: 20rpx;
+  margin-top: 45rpx;
+  position: fixed;
+  font-size: 35rpx;
+  font-weight: bolder;
+  color: rgb(29, 43, 59);
+}
+
+
+
+.card-bottom .li {
+    font-weight: bold;
+    color: gold;
+    width: 33.333%;
+    display: block;
+    float: left;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-bottom .li .praise {
+    color: gold
+}
+
+
+.card-bottom .li .praise.active {
+    color: greenyellow
+}

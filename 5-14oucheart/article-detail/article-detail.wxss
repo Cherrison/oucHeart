@@ -1,0 +1,50 @@
+/**基础风格样式**/
+@import '/towxml/style/main.wxss';
+
+.round-click{
+    height: 120rpx;
+    width: 120rpx;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 150rpx;
+    right: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+.round-click image{
+  height: 80rpx;
+  width: 80rpx;
+}
+.round-click navigator{
+    font-size: 32rpx;
+    max-width: 80rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.btn{
+  height: 3vh;
+  width: 12vw;
+  background-color: #db8bbb;
+  opacity: 0.80;
+  border-radius: 20rpx;
+  margin-top: 45rpx;
+  position: fixed;
+  font-size: 35rpx;
+  font-weight: bolder;
+  color: rgb(29, 43, 59);
+}
+.topAback{
+  display: inline-flex;
+  flex-direction: row;
+
+}
+/**如果页面有动态主题切换，则需要将使用到的样式全部引入**/
+
+/**主题配色（浅色样式）**/
+@import '/towxml/style/theme/light.wxss';
+
+/**主题配色（深色样式）**/
+@import '/towxml/style/theme/dark.wxss';
