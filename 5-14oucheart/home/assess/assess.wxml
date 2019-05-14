@@ -1,0 +1,71 @@
+  <view class="cu-custom" style="height:150rpx;">
+    <view class="cu-bar fixed bg-gradual-pink" style="height:150rpx;padding-top:10px;">
+      <view bindtap='back' class='btn'>返回</view>
+      <text style='font-weight:bolder;margin-left:300rpx;margin-top:50rpx;'>心灵测评</text>
+    </view>
+  </view>
+
+
+
+<view class='container'>
+<view class="cu-bar bg-white margin-top">
+  <view class='action'>
+    <view bindtap='showModal' data-target="DialogModal1" class='btn1 text-center text-bold text-green text-xxl'>?心理自测量表</view>
+  </view>
+</view>
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>心理自测量表</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view style='padding-bottom:40rpx;'class='padding-sm'>
+      __心理测评量表又叫心理测量，是指依据一定的心理学理论，使用一定的操作程序，给人的能力、人格及心理健康等心理特性和行为确定出一种数量化的价值。现阶段心理测量以心理量表测评为主要测评手段。心理测评是通过科学、客观、标准的测量手段对人的特定素质进行测量、分析、评价。
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='cu-btn line-green text-green' bindtap='hideModal'>取消</button>
+        <button class='cu-btn bg-green margin-left' bindtap='hideModal'>了解</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<swiper style='width:100%;height:60%;padding:35rpx;margin:15rpx;'
+  next-margin='10'
+  previous-margin='10'
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  bindchange='change'
+  current='{{currentIndex}}'
+>
+  <block wx:for="{{data}}" wx:for-index="index" style="height:100%;">
+    <swiper-item class="radius shadow text-xl" style='height:100%;align-items:center;display:flex;flex-direction:column;'>
+      <text>{{item[0]}}</text>
+      <view class='text-center' style='display:flex;flex-direction:column;padding:15rpx;'>
+        <button wx:for='{{item[1]}}' wx:for-item='it' wx:for-index='idx' class='lg margin cu-btn bg-blue' bindtap='choose' data-id='{{index}}' data-index='{{idx}}'>{{idx}}:{{it}}</button>
+      </view>
+      <view wx:if="{{isFinal}}" class='margin-xl'>
+        <button wx:if="{{isComplete}}" class='cu-btn bg-green shadow' bindtap='result'>查看结果</button>
+        <text wx:if='{{!isComplete}}'>未完成</text>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+ <view wx:if='{{show_result}}'>
+        <view class="containere">
+          <ec-canvas style='height:950rpx;text-xxl'id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+          <text class='text-center text-bold text-pink text-xxl '>得分{{score}}</text>
+          <text class='text-center text-bold text-green text-xxl '>\n我的结果:你的心理状态一般</text>
+          <text class='text-center text-black text-xl '>
+            \t最近不时有一些事压在你心头，有时甚至感觉到很压抑，不能呼吸。总得来说你的负面情绪没有影响到你的正常生活，但你不是长期处于愉悦的状态。突然心情不好就容易钻牛角尖。压抑的时候尝试找个心理咨询师，释放一下心头的压力吧。
+          </text>
+        </view>
+      </view>
+</view>

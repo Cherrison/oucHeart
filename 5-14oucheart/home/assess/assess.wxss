@@ -1,0 +1,48 @@
+.btn{
+  height: 3vh;
+  width: 12vw;
+  background-color: #db8bbb;
+  opacity: 0.80;
+  border-radius: 20rpx;
+  margin-top: 45rpx;
+  position: fixed;
+  font-size: 35rpx;
+  font-weight: bolder;
+  color: rgb(29, 43, 59);
+}
+.container{
+  height: 90vh;
+  width: 100vw;
+}
+
+.containere {
+  position: absolute;
+  top: 20rpx;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: white;
+} 
+
+.item{
+  box-shadow:grey 5rpx 5rpx 4rpx 4rpx inset;
+  padding: 15rpx;
+}
+.btn1{
+  height: 5vh;
+  width: 50vw;
+  background-color: lightblue;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+  padding-top:10rpx;
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}

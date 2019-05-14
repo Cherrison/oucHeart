@@ -1,0 +1,51 @@
+<!-- 自定义头部navigationBar -->
+<view>
+
+      <view class="cu-custom" style="height:150rpx;">
+      <view class="cu-bar fixed bg-gradual-pink" style="height:150rpx;padding-top:10px;">
+      <view bindtap='back' class='btn'>返回</view>
+        <text style='font-weight:bolder;margin-left:300rpx;margin-top:50rpx;'>海底树洞</text>
+      </view>
+    </view>
+
+<scroll-view bindscroll="scroll" style="height: 80vh;" class="container" style='backgroud-color:green' scrollY="true">
+
+  <block class='grid padding-sm '>
+
+    <view  class='padding-sm' bindtap='toNoteDetail' wx:for='{{card}}' wx:key="idc">
+
+      <view style='height:370rpx;' class='bg-{{item.bg}} padding radius-lg text-center shadow-blur'>
+        <view style='height:266rpx;'>
+          <view class="text-lg">{{item.name}}</view>
+          <view class='margin-top-lg text-Abc'>{{item.short}}</view>
+        </view>
+
+        <view style='height:104rpx;' class="card-bottom">
+
+          <view catchtap="clickLike" data-card-id='{{item.card_id}}' class="li">
+            <view class="praise {{item.like_status==1?'active':''}}">
+              <text class='icon-appreciate text-xxl '></text> {{item.like_num}}
+            </view>
+          </view>
+
+          <view class="li cu-item">
+            <text class='icon-mark text-xxl '></text> {{item.commemt_num}}
+          </view>
+
+          <view catchtap="loadStickyNote" class="li">
+            <view>
+              <text class='icon-refresh text-xxl '></text> 换一换
+            </view>
+          </view>
+
+        </view>
+
+
+      </view>
+    </view>
+    
+  </block>
+
+</scroll-view>
+
+</view>
