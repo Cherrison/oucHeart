@@ -7,10 +7,13 @@ Component({
    * 页面的初始数据
    */
   data: {
+    inter:"",
+    startTime:"0:00",
+    endTime:0,
+    sliderBar:0,
     userinfo: "",
     nickName: '',
     imageurl: '',
-
     StatusBar: t.globalData.StatusBar,
     CustomBar: t.globalData.CustomBar,
     cardCur: 0,
@@ -58,7 +61,7 @@ Component({
       author: "小海",
       boutique: 1,
       classify: 1,
-      listen_url: "https: //douwan20181107.oss-cn-shenzhen.aliyuncs.com/dw/1.15%E2%80%9C%E7%BB%93%E5%A9%9A%E5%A4%9A%E5%B9%B4%EF%BC%8C%E6%88%91%E5%8D%B4%E6%B4%BB%E5%BE%97%E5%83%8F%E4%B8%AA%E5%8D%95%E8%BA%AB%EF%BC%81%E2%80%9D%EF%BC%8C%E4%BD%A0%E7%9A%84%E5%A9%9A%E5%A7%BB%E5%AD%A4%E7%8B%AC%E5%90%97%EF%BC%9F.mp3?OSSAccessKeyId=LTAIFGqqlJXdihr7&Expires=1555339320&Signature=Okr6tOGXyBuaB4bOIp%2BDa33rl7I%3D",
+      listen_url: "http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46",
       rank: 0,
       hot: 28293
     },
@@ -214,6 +217,8 @@ Component({
   },
   methods: {
     onLoad: function (options) {
+      var app = getApp()
+      app.setMusic("单身", this.data.listenList.head_img, "海", "单身", this.data.listenList.listen_url)
       var that = this
       t.getUserInfo(function (usercb) {
         that.setData({
@@ -223,6 +228,31 @@ Component({
         })
         console.log('用户名称: ', usercb)
         console.log('用户名称1: ', that.data.userinfo)
+      })
+    },
+    onReady:function(options){
+      console.log("ready")
+      var app = getApp()
+      var length = app.getDuration()
+      var m = parseInt(length / 60)
+      var s = parseInt(length % 60)
+      this.setData({
+        endTime: m + ":" + s
+      })
+      app.pauseMusic()
+    },
+    endTime(that){
+      clearInterval(that.data.inter)
+    },
+    setTime:function(that){
+      var app = getApp()
+      var current = app.getCurrentTime()
+      var m = parseInt(current/60)
+      var s = parseInt(current%60)
+      that.setData({
+        maxTime:app.getDuration(),
+        sliderBar:app.getCurrentTime(),
+        startTime:m+":"+s
       })
     },
     // 轮播图
@@ -275,20 +305,25 @@ Component({
       this.setData({
         bgAudioState: playChange
       })
-      
+      getApp().setTime(playing)
       console.log('切换到 '+ playing +' 处');
     },
     play: function (t) {
+      var app = getApp()
       if (this.data.bgAudioState.playState==0){
         console.log('播放')
         this.setData({
           bgAudioState: this.data.playing
         })
+        this.data.inter = setInterval(this.setTime, 1000, this)
+        app.playMusic()
       }else{
         console.log('暂停')
+        app.pauseMusic()
         this.setData({
           bgAudioState: this.data.pause
         })
+        this.endTime(this)
       }
     },
 

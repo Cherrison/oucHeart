@@ -1,10 +1,34 @@
 //app.js
 const Towxml = require('/towxml/main');     //引入towxml库
-
+const bgManager = wx.getBackgroundAudioManager();
 App({
-
+  data:{
+    bgManager:bgManager
+  },
   towxml: new Towxml(),                    //创建towxml对象，供小程序页面使用
+  setMusic: function (title, coverImgUrl, singer, epname, src) {
+    bgManager.title = title
+    bgManager.coverImgUrl = coverImgUrl
+    bgManager.singer = singer
+    bgManager.src = src
+    bgManager.epname = epname
+  },
+  playMusic:function(e){
+    bgManager.play()
+  },
+  setTime:function(time){
+    bgManager.currentTime = time
+  },
   
+  getDuration:function(){
+    return bgManager.duration
+  },
+  getCurrentTime:function(){
+    return bgManager.currentTime
+  },
+  pauseMusic:function(e){
+    bgManager.pause()
+  },
   getUserInfo: function (cb) {
     var that = this
     if (this.globalData.userInfo) {

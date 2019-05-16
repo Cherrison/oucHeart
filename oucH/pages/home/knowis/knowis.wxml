@@ -18,10 +18,11 @@
   <!--此处设置文章内容滑动，下拉至底部自动加载，加载由小程序自身完成-->
 <scroll-view scroll-y='true' scroll-x='false' bindscrolltolower='tolower' style='height:100%;'>
   <view class="cu-card article">
-    <view wx:for="{{articleList}}" bindtap='todetail' data-article-id='{{item.id}}'wx:key class="cu-item shadow">
+    <view wx:for="{{articleList}}" bindtap='todetail' data-article-id='{{item.id}}'wx:for-index='id' class="cu-item shadow">
       <view class="title">{{item.title}}</view>
       <view class="content">
         <image src="{{item.imgurl}}" mode="aspectFill"></image>
+        <image src="{{item.play}}" data-id='{{id}}' data-src="{{item.src}}" style='z-index:200;position:absolute; width:70rpx;height:70rpx;margin-left:90rpx;margin-top:45rpx;' catchtap='play'></image>
         <view class="desc">
           <view class='text-content'>{{item.description}}</view>
           <view>

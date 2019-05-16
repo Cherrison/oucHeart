@@ -6,6 +6,9 @@ Page({
     isCard: 0,
     showcnt:"0",//已加载的文章数
     articleList: [],
+    play:"/images/play-btn-start.png",
+    isPlay:false,
+    currentPlayId:0,
   },
 
 tolower:function(e){
@@ -13,6 +16,40 @@ tolower:function(e){
   this.getData()
 },
 
+play:function(e){
+  console.log(e)
+  var id = e.currentTarget.dataset.id
+  var id2 = this.data.currentPlayId
+  if(id!=id2){
+    this.data.articleList[id2].play = "/images/play-btn-start.png"
+    this.data.articleList[id].play = "/images/play-btn-stop.png"
+    this.data.articleList[id].isPlay = true
+    this.data.articleList[id2].isPlay = false
+    var list1 = 'articleList[' + id + '].play'
+    var list2 = 'articleList[' + id2 + '].play'
+    this.setData({
+      [list1]:this.data.articleList[id].play,
+      [list2]: this.data.articleList[id2].play,
+      currentPlayId:id
+    })
+  }
+  else if(this.data.articleList[id].isPlay){
+    this.data.articleList[id].play = "/images/play-btn-start.png"
+    this.data.articleList[id].isPlay = !this.data.articleList[id].isPlay
+    var list = 'articleList[' + id + '].play'
+    this.setData({
+      [list]: this.data.articleList[id].play,
+    })
+  }
+  else {
+    this.data.articleList[id].play = "/images/play-btn-stop.png"
+    this.data.articleList[id].isPlay = !this.data.articleList[id].isPlay
+    var list = 'articleList[' + id + '].play'
+    this.setData({
+      [list]: this.data.articleList[id].play,
+    })
+  }
+},
 
 getData:function(){
   var that = this
@@ -38,6 +75,8 @@ getData:function(){
         for (let k = 0; k < res.data[i].tags.length; k++) {
           var str = res.data[i].tags[k]
           uni.push(JSON.parse(str))
+          res.data[i]["play"] = "/images/play-btn-start.png"
+          res.data[i]["isPlay"] = false
         }
         res.data[i].tags = uni
       }

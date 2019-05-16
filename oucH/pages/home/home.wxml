@@ -57,9 +57,9 @@
               </view>
             </view>
             <view class="slider">
-              <view class="left">{{bgAudioState.starttime}}</view>
-              <view class="right">{{bgAudioState.endtime}}</view>
-              <slider activeColor="rgb(167, 143, 233)" blockColor="rgb(167, 143, 233)" blockSize="12" class="slider-box" max="{{bgAudioState.max}}" step="1" bindchange='sliderChange' value="{{bgAudioState.offset}}"></slider>
+              <view class="left">{{startTime}}</view>
+              <view class="right">{{endTime}}</view>
+              <slider activeColor="rgb(167, 143, 233)" blockColor="rgb(167, 143, 233)" blockSize="12" class="slider-box" max="{{maxTime}}" step="1" bindchange='sliderChange' value="{{sliderBar}}"></slider>
             </view>
             <view class="play-bottom">
               <view catchtap="lastSong" class="play-prev">

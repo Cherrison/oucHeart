@@ -1,10 +1,10 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/home/knowis/knowis",
     "pages/article-detail/article-detail",
     "pages/home/assess/assess",
     "pages/home/assess/result/result",
-    "pages/home/knowis/knowis",
     "pages/home/listen/listen",
     "pages/home/heartbar/heartbar",
     "pages/expert/expert",
@@ -20,6 +20,9 @@
     "navigationBarTextStyle": "white",
     "backgroundTextStyle": "light"
   },
+  "requiredBackgroundModes":[
+    "audio"
+  ],
   "usingComponents": {},
   "tabBar": {
     "custom": true,
