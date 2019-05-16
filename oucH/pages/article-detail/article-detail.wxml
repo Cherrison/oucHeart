@@ -1,0 +1,10 @@
+<!--引入towxml模版入口文件，并使用模版-->
+
+<import src="/towxml/entry.wxml"/>
+
+<template is="entry" data="{{...article}}"/>
+
+<!--圆形点击框  -->
+<view class="round-click" bindtap='changeTheme'>
+   <image src='{{themepic[currentTheme]}}'></image>
+</view>

@@ -1,0 +1,35 @@
+  <view class="cu-custom" style="height:150rpx;">
+    <view class="cu-bar fixed bg-gradual-pink" style="height:150rpx;padding-top:10px;">
+      <view bindtap='back' class='btn'>返回</view>
+      <text style='font-weight:bolder;margin-left:300rpx;margin-top:50rpx;'>小海心声</text>
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class='action'>
+      <text class='icon-titles text-orange '></text> 来这里倾听我的声音
+    </view>
+    <view class='action'>
+      <switch class='sm' checked='{{isCard}}' bindchange='isCard'></switch>
+    </view>
+  </view>
+
+  <!--此处设置文章内容滑动，下拉至底部自动加载，加载由小程序自身完成-->
+<scroll-view scroll-y='true' scroll-x='false' bindscrolltolower='tolower' style='height:100%;'>
+  <view class="cu-card article">
+    <view wx:for="{{articleList}}" bindtap='todetail' data-article-id='{{item.id}}'wx:key class="cu-item shadow">
+      <view class="title">{{item.title}}</view>
+      <view class="content">
+        <image src="{{item.imgurl}}" mode="aspectFill"></image>
+        <view class="desc">
+          <view class='text-content'>{{item.description}}</view>
+          <view>
+            <view wx:for="{{item.tags}}" wx:for-item="itag" wx:key="itags" class='cu-tag bg-{{itag.color}} light sm round'>{{itag.short}}</view>
+             <view class='text-brown cu-tag bg-olive light round'>浏览人数：{{item.star}}</view>
+          </view>
+         
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

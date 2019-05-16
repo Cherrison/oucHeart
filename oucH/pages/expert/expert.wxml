@@ -1,0 +1,109 @@
+<view>
+  <!-- 自定义头部navigationBar -->
+
+    <view class="cu-custom" style="height:150rpx;">
+      <view class="cu-bar fixed bg-gradual-pink" style="height:150rpx;padding-top:10px;">
+        <text style='font-weight:bolder;margin-left:300rpx;margin-top:50rpx;'>咨询页面</text>
+      </view>
+    </view>
+
+
+<!-- ----------------------------------------------------- -->
+<!-- 咨询页主体部分  -->
+<scroll-view scroll-x scroll-with-animation  style='z-index:999;'class="topbar bg-green nav" scroll-left="{{scrollLeft}}">
+      <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="0">
+        <text class='icon-camerafill'></text> 抑郁
+      </view>
+      <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="1">
+        <text class='icon-upstagefill'></text> 自卑
+      </view>
+      <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="2">
+        <text class='icon-clothesfill'></text> 情感
+      </view>
+      <view class="cu-item {{4==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="4">
+        <text class='icon-favorfill'></text> 分类4
+      </view>
+      <view class="cu-item {{5==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="5">
+        <text class='icon-timefill'></text> 分类5
+      </view>
+      <view class="cu-item {{6==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="6">
+        <text class='icon-clothesfill'></text> 皮肤1
+      </view>
+      <view class="cu-item {{7==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="7">
+        <text class='icon-camerafill'></text> 数码2
+      </view>
+      <view class="cu-item {{8==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="8">
+        <text class='icon-upstagefill'></text> 排行榜2
+      </view>
+      <view class="cu-item {{9==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="9">
+        <text class='icon-clothesfill'></text> 皮肤2
+      </view>
+
+    </scroll-view >
+
+  <view class='allbottom'>
+    
+    <view class="list">
+      <navigator class="item" url="/pages/expert-detail/expert-detail?id={{item.id}}" wx:for="{{datalist}}" wx:key="category_id" wx:if='{{item.category==condition? 1:0}}'>
+        <image class="pic" src="https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=3761627809,1796684792&fm=85&s=E8F235C542D311D8443815A003007012"></image>
+        <view class="item_main">
+          <view class="tit">{{item.name}}
+            <label>从业{{item.occu_info.entryTime}}年</label>
+          </view>
+          <view class="text">{{item.occu_info.option}}</view>
+          <view class="grid tag ">
+            <label wx:for="{{item.tags}}" wx:for-item="vo" wx:key="*this">{{vo}}</label>
+          </view>
+          <!-- <view class="count">{{item.price.price}}元/{{item.price.min}}分钟</view> -->
+          <view class="type">{{item.service_type}}</view>
+        </view>
+      </navigator>
+
+      <navigator class="item" url="/pages/expert-detail/expert-detail?id={{item.id}}" wx:for="{{datalist}}" wx:key="category_id" wx:if='{{item.category==condition? 1:0}}'>
+        <image class="pic" src="https://t12.baidu.com/it/u=2690865287,281971506&fm=76"></image>
+        <view class="item_main">
+          <view class="tit">{{item.name}}
+            <label>从业{{item.occu_info.entryTime}}年</label>
+          </view>
+          <view class="text">{{item.occu_info.option}}</view>
+          <view class="tag">
+            <label wx:for="{{item.tags}}" wx:for-item="vo" wx:key="*this">{{vo}}</label>
+          </view>
+          <!-- <view class="count">{{item.price.price}}元/{{item.price.min}}分钟</view> -->
+          <view class="type">{{item.service_type}}</view>
+        </view>
+      </navigator>
+      <navigator class="item" url="/pages/expert-detail/expert-detail?id={{item.id}}" wx:for="{{datalist}}" wx:key="category_id" wx:if='{{item.category==condition? 1:0}}'>
+        <image class="pic" src="https://ss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=1672693258,3867955407&fm=202&gp=0.jpg&w_h=121_75&cs=1672693258,3867955407&ow_h=121_75&src=3000&mola=new&crop=v1"></image>
+        <view class="item_main">
+          <view class="tit">{{item.name}}
+            <label>从业{{item.occu_info.entryTime}}年</label>
+          </view>
+          <view class="text">{{item.occu_info.option}}</view>
+          <view class="tag">
+            <label wx:for="{{item.tags}}" wx:for-item="vo" wx:key="*this">{{vo}}</label>
+          </view>
+          <!-- <view class="count">{{item.price.price}}元/{{item.price.min}}分钟</view> -->
+          <view class="type">{{item.service_type}}</view>
+        </view>
+      </navigator>
+      <navigator class="item" url="/pages/expert-detail/expert-detail?id={{item.id}}" wx:for="{{datalist}}" wx:key="category_id">
+        <image class="pic" src="https://ss3.baidu.com/-rVXeDTa2gU2pMbgoY3K/it/u=409133432,2699647270&fm=202&mola=new&crop=v1"></image>
+        <view class="item_main">
+          <view class="tit">{{item.name}}
+            <label>从业{{item.occu_info.entryTime}}年</label>
+          </view>
+          <view class="text">{{item.occu_info.option}}</view>
+          <view class="tag">
+            <label wx:for="{{item.tags}}" wx:for-item="vo" wx:key="*this">{{vo}}</label>
+          </view>
+          <!-- <view class="count">{{item.price.price}}元/{{item.price.min}}分钟</view> -->
+          <view class="type">{{item.service_type}}</view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+
+</view>

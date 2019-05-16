@@ -1,0 +1,112 @@
+.topbar{
+  position: fixed;
+}
+
+.allbottom{
+  padding-top: 100rpx;
+  padding-bottom: 100rpx;
+}
+
+.list .item {
+    display: block;
+    padding: 24rpx;
+    position: relative;
+    margin-left: 5vw;
+    margin-bottom: 20rpx;
+    width: 90vw;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+
+.list .item::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.list .item:last-child::before {
+    display: none;
+}
+
+.list .item .pic {
+    float: left;
+    width: 200rpx;
+    height: 140rpx;
+    border-radius: 10rpx;
+}
+
+.list .item_main {
+    margin-left: 220rpx;
+}
+
+.list .item_main .tit {
+    font-size: 28rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-bottom: 4rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list .item_main .tit label {
+    height: 26rpx;
+    line-height: 26rpx;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2rpx;
+    font-size: 22rpx;
+    color: green;
+    padding-left: 12rpx;
+    margin-left: 100rpx;
+    border-left: 1px solid #dcdcdc;
+}
+
+.list .item_main .text {
+    font-size: 22rpx;
+    color: #999;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-bottom: 6rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list .item_main .tag {
+    height: 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.list .item_main .tag label {
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-right: 12rpx;
+    color: #fff;
+    font-size: 22rpx;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 6rpx;
+    border-radius: 4rpx;
+    background-color: #476adb;
+    opacity: 0.68;
+}
+
+.list .item_main .count {
+    float: right;
+    font-size: 22rpx;
+    color: #999;
+    height: 30rpx;
+    line-height: 30rpx;
+}
+
+.list .item_main .type {
+    color: #2ec17d;
+    font-size: 24rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    padding-left: 44rpx;
+    background: url('https://www.52hertalk.cn/public/static/images/wx/expert-ic-1.png') no-repeat left;
+    background-size: 34rpx 20rpx;
+}

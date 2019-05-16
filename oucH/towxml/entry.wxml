@@ -1,0 +1,22 @@
+<template name="entry">
+
+  
+
+  <!-- 自定义头部navigationBar -->
+
+    <view class="cu-custom" style="height:150rpx;">
+      <view class="cu-bar fixed bg-gradual-pink" style="height:150rpx;padding-top:10px;">
+      <view bindtap='back' class='btn'>返回</view>
+        <text style='font-weight:bolder;margin-left:300rpx;margin-top:50rpx;'>文章详情页</text>
+      </view>
+    </view>
+  
+  <view class="h2w h2w-{{theme}}">
+    <view class="h2w__main">
+      <import src="./renderTemplate.wxml"/>
+      <block wx:for="{{child}}" wx:key="{{index}}">
+        <template is="m0" data="{{item}}"/>
+      </block>
+    </view>
+  </view>
+</template>
