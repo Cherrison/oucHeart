@@ -1,0 +1,11 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">自测量量表</view>
+</cu-custom>
+<scroll-view scroll-y='true' class='scrollPage cu-card article'>
+  <view wx:for='{{testList}}' style="background-image:url(https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg);height:25%;border-radius: 15rpx 15rpx 15rpx 15rpx;box-shadow: 15rpx 15rpx 20rpx;margin:25rpx;padding:15rpx;" class='cu-item shadow'>
+    <view class='title text-center' style='font-size:45rpx;color:white;'>
+      <view class='text-cut'>{{item.title}}</view>
+    </view>
+  </view>
+</scroll-view>

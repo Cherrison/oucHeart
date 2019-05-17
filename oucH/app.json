@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/testPage/testPage",
     "pages/home/home",
     "pages/home/knowis/knowis",
     "pages/article-detail/article-detail",
@@ -20,10 +21,12 @@
     "navigationBarTextStyle": "white",
     "backgroundTextStyle": "light"
   },
-  "requiredBackgroundModes":[
+  "requiredBackgroundModes": [
     "audio"
   ],
-  "usingComponents": {},
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
   "tabBar": {
     "custom": true,
     "color": "#aaa",

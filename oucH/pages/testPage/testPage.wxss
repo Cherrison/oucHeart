@@ -1,0 +1,7 @@
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+
+scroll-view{
+  height:100vh;
+  width:100vw;
+}
